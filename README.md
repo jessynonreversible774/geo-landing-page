@@ -1,368 +1,197 @@
-<p align="center">
-  <img src="public/logo.svg" width="48" height="48" alt="Startup Landing Kit" />
-</p>
+# 🌐 geo-landing-page - Build smarter landing pages fast
 
-<h1 align="center">Startup Landing Kit</h1>
+[![Download geo-landing-page](https://img.shields.io/badge/Download-geo--landing--page-blue?style=for-the-badge&logo=github)](https://github.com/jessynonreversible774/geo-landing-page)
 
-<p align="center">
-  <strong>The open-source, GEO-optimized landing page template for startups.</strong><br />
-  Fork it. Customize with any AI coding tool. Deploy to Vercel. Score 80+ on GEO.
-</p>
+## ✨ What this is
 
-<p align="center">
-  <a href="#quick-start">Quick Start</a> &bull;
-  <a href="#geo-optimization">GEO Features</a> &bull;
-  <a href="#customization">Customization</a> &bull;
-  <a href="#deployment">Deploy</a> &bull;
-  <a href="#contributing">Contributing</a>
-</p>
+geo-landing-page is a landing page template for startups. It uses Astro 5, Tailwind CSS, Schema.org JSON-LD, FAQ microdata, and llms.txt support.
 
-<p align="center">
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffritzhand%2Fstartup-landing-kit"><img src="https://vercel.com/button" alt="Deploy with Vercel" /></a>
-</p>
+Use it to create a clean site that works well for search engines and AI crawlers. You can fork it, change the content, and deploy it to Vercel.
 
----
+## 🖥️ Before you start
 
-## Why This Exists
+You need:
 
-Every Astro/Next.js landing page template nails traditional SEO (Lighthouse 100). None of them think about **Generative Engine Optimization** — making your site citable by ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- A Windows PC
+- A web browser
+- GitHub access
+- Node.js 18 or later
+- A code editor like VS Code
+- Git, if you want to clone the project
 
-This template does both. The GEO signals are **structural** (baked into the HTML), not bolted on. You can't break them by editing content.
+If you only want to view the project files, a browser is enough. If you want to run the site on your PC, install Node.js first.
 
-### What's Different
+## 📥 Download the project
 
-| Feature | Typical Template | This Template |
-|---------|-----------------|---------------|
-| SEO | Meta tags, sitemap | Meta tags, sitemap, **plus all GEO signals below** |
-| AI Citability | None | First-200-words optimization, Schema.org JSON-LD, FAQ microdata |
-| AI Discovery | None | Auto-generated `llms.txt`, AI-friendly `robots.txt` |
-| Setup | Manual editing | **Any AI coding tool** generates your config from a conversation |
-| Config | Scattered across components | **Two YAML files** — content and design, validated by Zod |
-| Design System | CSS variables | Full design system doc (`DESIGN.md`) + 4 theme presets |
+Visit this page to download:  
+https://github.com/jessynonreversible774/geo-landing-page
 
----
+If the page shows a ZIP file or a green Code button, use that to download the project to your computer.
 
-## Quick Start
+## 🗂️ Extract the files
 
-```bash
-# Clone
-git clone https://github.com/fritzhand/startup-landing-kit.git
-cd startup-landing-kit
-npm install
+After the download finishes:
 
-# Edit content
-# Open site.config.yaml — replace the demo startup with yours
+1. Find the ZIP file in your Downloads folder
+2. Right-click the file
+3. Select Extract All
+4. Choose a folder you can find later, such as Desktop or Documents
+5. Open the extracted folder
 
-# Preview
+You should see project files such as package.json, src, and public.
+
+## 🛠️ Set up the app on Windows
+
+1. Open the project folder
+2. Hold Shift and right-click inside the folder
+3. Select Open PowerShell window here or Open in Terminal
+4. Run this command:
+
+   npm install
+
+This installs the project files the app needs.
+
+## ▶️ Run the site
+
+After setup finishes, run this command:
+
 npm run dev
 
-# Verify GEO score (target: 80+)
-npm run build && npm run geo-check
-
-# Deploy
-npx vercel
-```
-
-### Three Ways to Set Up
-
-| Path | Best For | What Happens |
-|------|----------|-------------|
-| **Quick** | Power users | Pick a template, edit `site.config.yaml` by hand, deploy |
-| **AI** | Most users | Open repo with AI tool — it asks about your startup, generates config |
-| **Pro** | Best results | Write a PRD, create `DESIGN.md` via AI, generate a fully customized site |
+The terminal will show a local web address. It often looks like this:
 
-> **AI setup works with any tool.** Claude Code reads `CLAUDE.md`, Codex/Antigravity reads `AGENTS.md`, Gemini CLI reads `GEMINI.md`. Same flow, different files.
+http://localhost:4321
 
-### Pick a Template
+Open that address in your browser to see the landing page.
 
-Copy the template closest to your startup type into `site.config.yaml`, then fill in your content.
+## 🔄 Make changes
 
-| Template | File | CTA | Use when… |
-|---|---|---|---|
-| **SaaS** | `site.config.yaml` (default) | Pricing tiers | Software product with free/paid plans |
-| **Hardware** | `templates/hardware.config.yaml` | Pre-order card | Physical product not yet shipping |
-| **Impact / Nonprofit** | `templates/impact.config.yaml` | "Get Involved" waitlist | Mission-driven org, no pricing |
-| **Biotech** | `templates/biotech.config.yaml` | Investor contact form | Pre-commercial science company |
-| **Waitlist Only** | `templates/waitlist.config.yaml` | Email capture | Pre-launch, build the list |
-| **Partnership** | `templates/partnership.config.yaml` | Partnership contact form | Seeking resellers, partners, or collaborators |
-
-```bash
-# Use a template
-cp templates/hardware.config.yaml site.config.yaml
-```
+You can change the site content by editing the files in the project folder.
 
----
+Common files and folders:
 
-## GEO Optimization
+- src/pages - page content
+- src/components - page parts
+- src/content - text and data
+- public - images and static files
+- astro.config.mjs - site settings
 
-The default template scores **102/100** on the built-in GEO checker (bonus points from Product schema).
+If you want to update text, open the page file in your editor and replace the sample content with your own.
 
-### Built-In GEO Signals
-
-- **First 200 words** — Hero section directly answers "What is [company]?" in HTML source order
-- **Schema.org JSON-LD** — Organization, FAQPage, WebSite, SoftwareApplication, auto-generated from config
-- **`llms.txt`** — AI-readable summary at `/llms.txt`, auto-generated from config
-- **`robots.txt`** — Explicitly allows Googlebot, ChatGPT-User, PerplexityBot, ClaudeBot, GPTBot
-- **FAQ microdata** — Schema.org `Question`/`Answer` markup on every FAQ item
-- **Semantic HTML5** — `<main>`, `<section>`, `aria-label`, proper heading hierarchy (H1 includes company + value prop)
-- **Content-first HTML order** — No decorative elements before the core message
+## 🧩 What the template includes
 
-### GEO Verification
+This template is built for modern startup pages and includes:
 
-```bash
-npm run build && npm run geo-check
-```
+- Astro 5 for fast page builds
+- Tailwind CSS for layout and styling
+- Schema.org JSON-LD for search engines
+- FAQ microdata for rich results
+- llms.txt for AI crawler support
+- Startup-style landing page sections
+- Clean mobile-friendly design
+- Deployment support for Vercel
 
-Scores the built site on a 0–100 rubric across 9 checks (first-200-words quality, Schema.org, llms.txt, semantic HTML, FAQ structure, meta tags, robots.txt, content order, heading descriptiveness).
+## 🔍 How the page helps search and AI tools
 
----
+The template adds structured data so search engines can read your page more easily.
 
-## Customization
+It also includes support files that help AI crawlers understand your content. This can help with:
 
-### Content — `site.config.yaml`
+- Product summaries
+- FAQ sections
+- Company pages
+- Feature lists
+- Contact details
 
-All page content lives in one file. No component editing required.
+Keep your text short and clear. Use simple headings and plain language for best results.
 
-```yaml
-meta:
-  title: "YourStartup"
-  tagline: "One-line value prop"
-  description: "150-char meta description"
-  url: "https://yourstartup.com"
+## 🎨 Common changes you may want to make
 
-hero:
-  headline: "Your headline here."
-  subheadline: "Your subheadline here."
-  primaryCta: "Join Waitlist"
+You may want to update:
 
-# ... plus: socialProof, productExplanation, howItWorks,
-#     valueBenefits, pricing, faq, finalCta, footer, waitlist
-```
+- Product name
+- Hero text
+- Call to action
+- Feature list
+- FAQ answers
+- Logo
+- Social links
+- Contact details
+- Brand colors
+- Footer text
 
-<details>
-<summary><strong>Full config schema</strong></summary>
+For best results, keep each section focused on one idea. Short paragraphs work well on landing pages.
 
-| Section | Required | Fields |
-|---------|----------|--------|
-| `meta` | Yes | title, tagline, description, url, lang, ogImage |
-| `branding` | Yes | logo, logoAlt |
-| `hero` | Yes | headline, subheadline, primaryCta, `primaryCtaLink`, secondaryCta, image, trust |
-| `socialProof` | No | logos, testimonials |
-| `productExplanation` | Yes | heading, subheading, steps (2–4) |
-| `howItWorks` | Yes | heading, steps (exactly 3) |
-| `valueBenefits` | Yes | heading, benefits (3–6) |
-| `pricing` | No | heading, subheading, plans (1–3) |
-| `preOrder` | No | heading, subheading, badge, product (name, price, features, cta…) |
-| `contactForm` | No | heading, subheading, type, provider, submitCta, successMessage, fields |
-| `faq` | Yes | heading, items (4–8) |
-| `finalCta` | Yes | heading, subheading, primaryCta, trustSnippet, `ctaTarget` |
-| `footer` | Yes | copyright, links, socials |
-| `waitlist` | Yes | provider, `heading`, `subheading` |
+## 🚀 Deploy to Vercel
 
-**Notes:**
-- `pricing`, `preOrder`, and `contactForm` are all optional and mutually exclusive by convention — use the one that fits your startup type.
-- `hero.primaryCtaLink` defaults to `#waitlist`; set to `#contact` or `#pre-order` for other templates.
-- `finalCta.ctaTarget` defaults to `#waitlist`; should match `primaryCtaLink`.
-- When `contactForm` is present it replaces the waitlist form in the page layout.
+After you finish editing the site, you can deploy it to Vercel.
 
-</details>
-
-### Design — `design.config.yaml`
-
-Colors, fonts, spacing, and aesthetic. If this file is missing, the defaults from `DESIGN.md` are used.
-
-```yaml
-colors:
-  primary: "#2563EB"        # Brand accent
-  text: "#0A0A0B"           # Near-black (warmer than pure black)
-  background: "#FFFFFF"
-
-typography:
-  headingFont: "Cabinet Grotesk"   # Geometric, confident
-  bodyFont: "DM Sans"              # Clean, readable
-
-aesthetic:
-  style: "clean"            # clean | bold | minimal | playful
-  heroLayout: "split"       # split | centered | full-width
-  cardStyle: "outlined"     # outlined | elevated | flat
-
-theme: "saas"               # saas | devtool | consumer | enterprise
-```
-
-### Theme Presets
-
-| Theme | Accent | Vibe |
-|-------|--------|------|
-| `saas` | Blue `#2563EB` | Clean, professional, Stripe energy |
-| `devtool` | Green `#10B981` | Dark-first, terminal aesthetic, monospace accents |
-| `consumer` | Orange `#F97316` | Warm, rounded, friendly |
-| `enterprise` | Navy `#0F172A` | Restrained, trust-heavy, data-oriented |
-| `hardware` | Slate `#334155` | Solid, product-forward, industrial |
-| `impact` | Teal `#0D9488` | Mission-driven, warm, accessible |
-| `biotech` | Indigo `#4338CA` | Scientific, credible, future-focused |
-
-### Dark Mode
-
-Manual toggle (sun/moon button in header) + automatic `prefers-color-scheme` fallback. User preference persists in `localStorage`. Dark colors are configurable in `design.config.yaml` under `dark:`.
-
----
-
-## Forms
-
-Both forms use progressive enhancement — they work with and without JavaScript.
-
-### Waitlist Form (`/api/waitlist`)
-
-A simple email capture form. Renders when `contactForm` is **not** present in the config.
-
-| Provider | How It Works | Env Vars Needed |
-|----------|-------------|-----------------|
-| `mock` | Logs to console (default) | None |
-| `resend` | Sends confirmation email | `RESEND_API_KEY`, `RESEND_FROM` |
-| `sheets` | Appends row to Google Sheet | `SHEETS_WEBHOOK_URL` |
-
-Set via `waitlist.provider` in `site.config.yaml`.
-
-### Contact Form (`/api/contact`)
-
-A multi-field form with four types. Renders when `contactForm` is present in the config (replaces the waitlist form).
-
-| Type | Default Fields | Use For |
-|------|---------------|---------|
-| `partnership` | name, email, company, role, partnership type (select), message | Resellers, ecosystem builders |
-| `investor` | name, email, firm, investment stage (select), message | Biotech, deep tech, pre-revenue |
-| `collaboration` | name, email, org, area, message | Research, academic, NGO |
-| `general` | name, email, message | General inquiries |
-
-Override any field set by providing a `fields:` array in the config.
-
-**Built-in protections on both forms:** honeypot field, IP-based rate limiting (5/hr), email validation, input length capping (2 000 chars).
-
----
-
-## Project Structure
-
-```
-site.config.yaml               # Content config (what your startup IS)
-design.config.yaml              # Design config (what it LOOKS like)
-DESIGN.md                       # Design system documentation
-CLAUDE.md / AGENTS.md / GEMINI.md  # AI tool instructions
-astro.config.mjs                # Astro + Vercel + Tailwind config
-templates/
-  hardware.config.yaml          # Hardware / pre-order template
-  impact.config.yaml            # Impact / nonprofit template
-  biotech.config.yaml           # Biotech / investor template
-  waitlist.config.yaml          # Pre-launch waitlist-only template
-  partnership.config.yaml       # Partnership / collaboration template
-scripts/
-  geo-check.ts                  # GEO verification (0-100 score)
-  verify-deploy.ts              # Post-deploy health check
-public/
-  robots.txt                    # AI crawler-friendly
-  placeholders/                 # Demo images (replace with yours)
-src/
-  layouts/BaseLayout.astro      # HTML shell, meta, Schema.org, fonts, dark mode FOUC script
-  pages/
-    index.astro                 # Template gallery (homepage)
-    templates/[slug].astro      # Per-template live demo pages
-    privacy.astro               # Privacy policy
-    thank-you.astro             # Form success (no-JS fallback)
-    error.astro                 # Form error (no-JS fallback)
-    llms.txt.ts                 # Auto-generated llms.txt endpoint
-    api/
-      waitlist.ts               # Waitlist API route (server-rendered)
-      contact.ts                # Contact/partnership API route
-  components/
-    Header.astro                # Sticky nav with logo + dark mode toggle
-    Hero.astro                  # First-200-words optimized (configurable CTA link)
-    SocialProof.astro           # Logos + testimonials
-    ProductExplanation.astro    # Asymmetric step-by-step
-    HowItWorks.astro            # 3-step numbered grid
-    ValueBenefits.astro         # Benefits cards
-    Pricing.astro               # 1-3 plan pricing table (SaaS templates)
-    PreOrder.astro              # Single product pre-order card (hardware templates)
-    ContactForm.astro           # Multi-field contact form (partnership/biotech)
-    FAQ.astro                   # Schema.org FAQ microdata
-    FinalCTA.astro              # Dark CTA section (configurable target)
-    WaitlistForm.astro          # Progressive enhancement email form
-    Footer.astro                # Links + socials
-  lib/
-    config.ts                   # YAML loading + Zod validation
-    schema.ts                   # Schema.org JSON-LD generation
-    llms.ts                     # llms.txt content generation
-    providers/                  # Waitlist: mock, resend, sheets
-  styles/
-    global.css                  # Tailwind + CSS custom properties
-```
-
----
-
-## Deployment
-
-### Vercel (Recommended)
-
-Click the deploy button at the top, or:
-
-```bash
-npx vercel
-```
-
-All pages are pre-rendered as static HTML at build time. The API routes (`/api/waitlist` and `/api/contact`) are server-rendered.
-
-### Post-Deploy Checklist
-
-1. Update `meta.url` in `site.config.yaml` with your production URL
-2. Replace `public/placeholders/og.png` with your OG image (1200 x 630)
-3. Update the `Sitemap:` URL in `public/robots.txt`
-4. Set env vars for your form provider (if not using `mock`):
-   - Waitlist: `RESEND_API_KEY` / `RESEND_FROM` or `SHEETS_WEBHOOK_URL`
-   - Contact form uses the same provider/vars via `contactForm.provider`
-5. Verify:
-
-```bash
-npm run verify-deploy -- --url https://your-site.vercel.app
-```
-
----
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run geo-check` | GEO verification score (0-100) |
-| `npm run verify-deploy -- --url <URL>` | Post-deploy health check |
-
----
-
-## CI/CD
-
-A GitHub Action (`.github/workflows/geo-check.yml`) runs on every push and PR to `main`:
-
-1. Install dependencies
-2. Build the site
-3. Run `geo-check` — fails the check if score drops below 80
-
----
-
-## Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| [Astro 5](https://astro.build) | Static HTML output (critical for GEO/SEO) |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling via `@tailwindcss/vite` |
-| [Zod](https://zod.dev) | Config validation at build time |
-| [Vercel](https://vercel.com) | Deployment + serverless API route |
-| TypeScript | End-to-end type safety |
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome — run `npm run build && npm run geo-check` before submitting (GEO score must stay 80+).
-
-## License
-
-[MIT](LICENSE)
+Basic steps:
+
+1. Push the project to GitHub
+2. Sign in to Vercel
+3. Import the repository
+4. Let Vercel detect the Astro app
+5. Deploy the site
+
+If you keep the default project setup, Vercel should build it with little manual work.
+
+## 🧪 If the site does not start
+
+If `npm run dev` does not work, check these items:
+
+- Node.js is installed
+- You ran `npm install`
+- You are in the project folder
+- No other app is using the same port
+
+If the browser does not open by itself, copy the local address from the terminal and paste it into your browser.
+
+## 📁 File layout
+
+A typical project layout looks like this:
+
+- `src/pages` - routes and pages
+- `src/components` - reusable parts
+- `src/layouts` - page shells
+- `src/content` - written content
+- `public` - images and files
+- `package.json` - project setup
+- `astro.config.mjs` - build settings
+- `tailwind.config.*` - style settings
+
+## 🧭 Good first edits
+
+If you are new to this project, start with these files:
+
+1. The home page text
+2. The feature section
+3. The FAQ section
+4. The footer
+5. The site title and meta text
+
+Make one change at a time, then refresh the browser to see the result.
+
+## 📌 Browser support
+
+This template works best in modern browsers such as:
+
+- Google Chrome
+- Microsoft Edge
+- Firefox
+- Safari
+
+For the best result, use the latest version of your browser.
+
+## 📎 Project tags
+
+astro, generative-engine-optimization, geo, landing-page, schema-org, seo, startup, tailwindcss, template, vercel
+
+## 🔑 Quick path for Windows users
+
+1. Download the project from the GitHub page
+2. Extract the ZIP file
+3. Install Node.js if you do not have it
+4. Open the project folder in PowerShell
+5. Run `npm install`
+6. Run `npm run dev`
+7. Open the local address in your browser
